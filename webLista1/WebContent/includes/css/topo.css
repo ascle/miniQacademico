@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+body{margin:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF;}
+
+#fundo_topo{
+	background:url(imagens/fundo_azul_topo.jpg) repeat-x; 
+	height:121px;
+}
+
+
+#topo{
+	width:800px;
+	border:0px solid #FF0000;
+	height:117px;
+	margin:0 auto;
+}
+
+#titulo_topo{
+	font-family:"Earwig Factory", Helvetica, sans-serif, Arial;
+	font-size:70px;
+	color:#406db9;
+	padding-top:22px;
+	float:left;
+	border:0px solid #FF0000;
+}

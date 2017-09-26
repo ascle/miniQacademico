@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+
+	<package name="cursoStruts" extends="default" namespace="/">
+		<action name="incluirCursoAction!*" class="br.com.ufs.cursoStruts.incluirCursoAction"
+			method="{1}">
+			<result name="input">/WEB-INF/pages/curso/formIncluirCurso.jsp</result>
+			<result>/WEB-INF/pages/curso/formIncluirCurso.jsp</result>
+		</action>
+		<action name="excluirCursoAction!*" class="br.com.ufs.cursoStruts.excluirCursoAction"
+			method="{1}">
+			<result name="input">/WEB-INF/pages/curso/formExcluirCurso.jsp</result>
+			<result>/WEB-INF/pages/curso/formExcluirCurso.jsp</result>
+		</action>
+	</package>
+
+	<package name="disciplinaStruts" extends="default" namespace="/">
+		<action name="incluirDisciplinaAction!*"
+			class="br.com.ufs.disciplinaStruts.incluirDisciplinaAction" method="{1}">
+			<result name="input">/WEB-INF/pages/disciplina/formIncluirDisciplina.jsp</result>
+			<result>/WEB-INF/pages/disciplina/formIncluirDisciplina.jsp</result>
+		</action>
+		<action name="listarDisciplinaAction!*"
+			class="br.com.ufs.disciplinaStruts.listarDisciplinaAction" method="{1}">
+			<result>/WEB-INF/pages/disciplina/listarDisciplina.jsp</result>
+		</action>
+		<action name="excluirDisciplinaAction!*"
+			class="br.com.ufs.disciplinaStruts.excluirDisciplinaAction" method="{1}">
+			<result name="input">/WEB-INF/pages/disciplina/formExcluirDisciplina.jsp</result>
+			<result name="success">/WEB-INF/pages/disciplina/formExcluirDisciplina.jsp</result>
+			<result name="none" type="chain">
+				<param name="actionName">listarDAction</param>
+			</result>
+		</action>
+		<action name="alterarDisciplinaAction!*"
+			class="br.com.ufs.disciplinaStruts.alterarDisciplinaAction" method="{1}">
+			<result name="input">/WEB-INF/pages/disciplina/formAlterarDisciplina.jsp</result>
+			
+			<result name="success" type="chain">
+				<param name="actionName">listarDAction</param>
+			</result>
+		</action>
+		<action name="listarDAction"
+			class="br.com.ufs.disciplinaStruts.listarDisciplinaAction">
+			<result>/WEB-INF/pages/disciplina/listarDisciplina.jsp</result>
+		</action>
+	</package>
+
+	<package name="cursoDisciplinaStruts" extends="default"
+		namespace="/">
+		<action name="incluirCursoDisciplinaAction!*"
+			class="br.com.ufs.cursoDisciplinaStruts.incluirCursoDisciplinaAction"
+			method="{1}">
+			<result name="input">/WEB-INF/pages/curso_disciplina/formIncluirCursoDisciplina.jsp</result>
+			<result>/WEB-INF/pages/curso_disciplina/formIncluirCursoDisciplina.jsp</result>
+		</action>
+		<action name="excluirCursoDisciplinaAction!*"
+			class="br.com.ufs.cursoDisciplinaStruts.excluirCursoDisciplinaAction"
+			method="{1}">
+			<result name="input">/WEB-INF/pages/curso_disciplina/formExcluirCursoDisciplina.jsp</result>
+			<result>/WEB-INF/pages/curso_disciplina/listarCurso.jsp</result>
+		</action>
+		<!-- 
+		<action name="listarGradeAction!*" class="br.com.ufs.cursoStruts.BuscarCursoAction" 
+			method="{1}"> <result name="input">/WEB-INF/pages/curso_disciplina/formListarGrade.jsp</result> 
+			<result name="none">/WEB-INF/pages/curso_disciplina/formListarGrade.jsp</result> 
+			<result name="success" type="chain"> <param name="actionName">listarGradeActionB</param> 
+			</result> 
+		</action> 
+		<action name="listarGradeActionB" class="br.com.ufs.cursoDisciplinaStruts.listarGradeAction"> 
+			<result>/WEB-INF/pages/curso_disciplina/ResultadoListarGrade.jsp</result> 
+		</action> -->
+		<action name="listarCursoAction" class="br.com.ufs.cursoDisciplinaStruts.listarCursoAction">
+			<result>/WEB-INF/pages/curso_disciplina/listarCurso.jsp</result>
+		</action>
+		<action name="listarGradeActionB" class="br.com.ufs.cursoDisciplinaStruts.listarGradeAction"> 
+			<result>/WEB-INF/pages/curso_disciplina/ResultadoListarGrade.jsp</result> 
+		</action>
+	</package>
+</struts>		
